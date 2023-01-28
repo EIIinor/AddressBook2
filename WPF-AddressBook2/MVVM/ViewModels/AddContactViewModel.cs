@@ -21,20 +21,21 @@ namespace WPF_AddressBook2.MVVM.ViewModels
         private string contact = string.Empty;
 
         [RelayCommand]
-        private void Add()
+        private void Add(ContactModel contact)
         {
-            var contact = new ContactModel
-            {
-                FirstName = "",
-                LastName = "",
-                Phone = "",
-                Email = "",
-                StreetName = "",
-                PostalCode = "",
-                City = "",
-            };
+            //var contact = new ContactModel
+            //{
+            //    FirstName = "",
+            //    LastName = "",
+            //    Phone = "",
+            //    Email = "",
+            //    StreetName = "",
+            //    PostalCode = "",
+            //    City = "",
+            //};
 
             ContactService.AddToList(contact);
+          
         }
 
 

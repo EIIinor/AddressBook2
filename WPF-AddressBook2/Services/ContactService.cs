@@ -1,29 +1,36 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-//using WPF_AddressBook2.Models;
+
+
 using WPF_AddressBook2.MVVM.Models;
 
 namespace WPF_AddressBook2.Services
 {
     public static class ContactService
     {
-        public static ObservableCollection<ContactModel> Contacts = new ObservableCollection<ContactModel>();
+
+        public static ObservableCollection<ContactModel> Contacts;
+        private static FileService fileService = new FileService($@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\WPF.contacts.json");
+
 
         static ContactService()
         {
+            try
+            {
+                Contacts = JsonConvert.DeserializeObject<ObservableCollection<ContactModel>>(fileService.Read())!;
+            }
+            catch { Contacts = new ObservableCollection<ContactModel>(); }
             //Contacts = new ObservableCollection<ContactModel>();
-            FileService.FilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\WPF.contacts.json";
+            //FileService.FilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\WPF.contacts.json";
+
         }
+
 
         public static void AddToList(ContactModel model)
         {
             Contacts.Add(model);
-            FileService.Save(JsonConvert.SerializeObject(Contacts));
+            fileService.Save(JsonConvert.SerializeObject(Contacts));
         }
 
 
@@ -31,7 +38,7 @@ namespace WPF_AddressBook2.Services
         public static void RemoveFromList(ContactModel model)
         {
             Contacts.Remove(model);
-            FileService.Save(JsonConvert.SerializeObject(Contacts));
+            fileService.Save(JsonConvert.SerializeObject(Contacts));
         }
 
 

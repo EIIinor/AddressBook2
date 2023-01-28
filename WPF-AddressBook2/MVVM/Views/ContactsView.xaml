@@ -15,7 +15,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="{Binding PageTitle}" FontSize="20" FontWeight="Medium" Margin="0 0 0 50" />
+        <TextBlock Grid.Row="0" Text="Contacts" FontSize="20" FontWeight="Medium" Margin="0 0 0 50" />
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -46,7 +46,7 @@
             </ListView>
 
             <StackPanel Grid.Column="1">
-                <TextBlock Text="{Binding SelectedContact.FirstName}" />
+                <TextBlock Text="{Binding SelectedContact.Email}" />
             </StackPanel>
             
         </Grid>

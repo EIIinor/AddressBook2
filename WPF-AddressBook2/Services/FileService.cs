@@ -6,28 +6,34 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WPF_AddressBook2.Models;
+using WPF_AddressBook2.MVVM.Models;
 
 namespace WPF_AddressBook2.Services
 {
-    public static class FileService
+    public class FileService
     {
+        private string _filePath;
 
-        public static string FilePath { get; set; } = null!;
+        //public static string FilePath { get; set; } = null!;
+        
+        public FileService(string filePath)
+        {
+            _filePath = filePath;
+        }
 
-        public static string Read()
+        public string Read()
         {
             try
             {
-                using var sr = new StreamReader(FilePath);
+                using var sr = new StreamReader(_filePath);
                 return sr.ReadToEnd();
             }
             catch { return string.Empty; }
         }
 
-        public static void Save(string content)
+        public void Save(string content)
         {
-            using var sw = new StreamWriter(FilePath);
+            using var sw = new StreamWriter(_filePath);
             sw.WriteLine(content);
         }
 

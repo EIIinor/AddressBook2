@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_AddressBook2"
         xmlns:viewmodels="clr-namespace:WPF_AddressBook2.MVVM.ViewModels"
+        xmlns:models="clr-namespace:WPF_AddressBook2.MVVM.Models"
         xmlns:views="clr-namespace:WPF_AddressBook2.MVVM.Views"
         d:DataContext="{d:DesignInstance Type=viewmodels:MainViewModel}"
         xmlns:customControls="clr-namespace:WPF_AddressBook2.CustomControls"

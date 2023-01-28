@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPF_AddressBook2.Models;
+using WPF_AddressBook2.MVVM.Models;
 using WPF_AddressBook2.Services;
 
 namespace WPF_AddressBook2.Pages
