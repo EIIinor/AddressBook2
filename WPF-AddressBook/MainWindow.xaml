@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="585" Width="900">
     
-    <Grid Margin="20">
+    <!--<Grid Margin="20">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -44,7 +44,7 @@
 
         </StackPanel>
 
-        <ListBox Grid.Column="1" Name="lbox_NavMenu" SelectionMode="Single" SelectionChanged="lbox_NavMenu_SelectionChanged">
+        --><!--<ListBox Grid.Column="1" Name="lbox_NavMenu" SelectionMode="Single" SelectionChanged="lbox_NavMenu_SelectionChanged">--><!--
             
         </ListBox>
         
@@ -60,6 +60,6 @@
             </ListView.ItemTemplate>
         </ListView>
         
-    </Grid>
+    </Grid>-->
     
 </Window>

@@ -9,10 +9,10 @@ using System.Runtime.CompilerServices;
 
 namespace AddressBook.Services;
 
-internal class Menu
+public class Menu
 {
 
-    private List<Contact> contacts = new List<Contact>();
+    public List<Contact> contacts = new List<Contact>();
     private FileService file = new FileService();
 
 

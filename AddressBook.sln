@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBook", "AddressBook\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF-AddressBook", "WPF-AddressBook\WPF-AddressBook.csproj", "{B16CC690-1535-430D-A516-0B1523B7D3E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-AddressBook2", "WPF-AddressBook2\WPF-AddressBook2.csproj", "{A1CBA6A3-BE25-4530-B050-73AF30B14061}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPF-AddressBook2", "WPF-AddressBook2\WPF-AddressBook2.csproj", "{A1CBA6A3-BE25-4530-B050-73AF30B14061}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBook.Tests", "AddressBook.Tests\AddressBook.Tests.csproj", "{F82D3E99-E750-47CB-A766-7CFDDAD93D07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-AddressBook2.Tests", "WPF-AddressBook.Tests\WPF-AddressBook2.Tests.csproj", "{889ABC77-F26E-4443-9A8D-EB7235DBBA11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{A1CBA6A3-BE25-4530-B050-73AF30B14061}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1CBA6A3-BE25-4530-B050-73AF30B14061}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1CBA6A3-BE25-4530-B050-73AF30B14061}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F82D3E99-E750-47CB-A766-7CFDDAD93D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F82D3E99-E750-47CB-A766-7CFDDAD93D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F82D3E99-E750-47CB-A766-7CFDDAD93D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F82D3E99-E750-47CB-A766-7CFDDAD93D07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{889ABC77-F26E-4443-9A8D-EB7235DBBA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889ABC77-F26E-4443-9A8D-EB7235DBBA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889ABC77-F26E-4443-9A8D-EB7235DBBA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889ABC77-F26E-4443-9A8D-EB7235DBBA11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

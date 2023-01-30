@@ -20,11 +20,13 @@ namespace WPF_AddressBook2.MVVM.ViewModels
         [ObservableProperty]
         private string pageTitle = "Contacts";
 
+
         [ObservableProperty]
         private ObservableCollection<ContactModel> contacts = new ObservableCollection<ContactModel>()
         {
             new ContactModel()
         };
+
 
         [ObservableProperty]
         private ContactModel selectedContact = null!;

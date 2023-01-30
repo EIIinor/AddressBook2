@@ -7,7 +7,7 @@ using WPF_AddressBook2.MVVM.Models;
 
 namespace WPF_AddressBook2.Services
 {
-    public static class ContactService
+    public class ContactService
     {
 
         public static ObservableCollection<ContactModel> Contacts;

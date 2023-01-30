@@ -23,59 +23,59 @@ namespace WPF_AddressBook
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
-    {
-        private ObservableCollection<Contact> contacts = new ObservableCollection<Contact>();
-        private readonly FileService file = new(); 
+    //public partial class MainWindow : Window
+    //{
+    //    private ObservableCollection<Contact> contacts = new ObservableCollection<Contact>();
+    //    private readonly FileService file = new(); 
 
 
-        public MainWindow()
-        {
-            InitializeComponent();
-            file.FilePath = @$"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\ContactsList.json";
+    //    public MainWindow()
+    //    {
+    //        InitializeComponent();
+    //        file.FilePath = @$"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\ContactsList.json";
 
-            PopulateContactsList();   
-        }
+    //        PopulateContactsList();   
+    //    }
 
-        private void PopulateContactsList()
-        {
-            try
-            {
-                var items = JsonConvert.DeserializeObject<ObservableCollection<Contact>>(file.Read());
-                if (items != null)
-                    contacts = items;
-            }
-            catch { }
+    //    private void PopulateContactsList()
+    //    {
+    //        try
+    //        {
+    //            var items = JsonConvert.DeserializeObject<ObservableCollection<Contact>>(file.Read());
+    //            if (items != null)
+    //                contacts = items;
+    //        }
+    //        catch { }
 
-            lv_Contacts.ItemsSource= contacts;
-        }
+    //        lv_Contacts.ItemsSource= contacts;
+    //    }
 
-        private void Btn_Add_Click(object sender, RoutedEventArgs e)
-        {
-            contacts.Add(new Contact
-            {
-                FirstName = tb_FirstName.Text,
-                LastName = tb_LastName.Text,
-                Email = tb_Email.Text,
-                Phone = tb_Phone.Text,
-                StreetName = tb_StreetName.Text,
-                City = tb_City.Text,
-                PostalCode = tb_PostalCode.Text,
-            });
+    //    private void Btn_Add_Click(object sender, RoutedEventArgs e)
+    //    {
+    //        contacts.Add(new Contact
+    //        {
+    //            FirstName = tb_FirstName.Text,
+    //            LastName = tb_LastName.Text,
+    //            Email = tb_Email.Text,
+    //            Phone = tb_Phone.Text,
+    //            StreetName = tb_StreetName.Text,
+    //            City = tb_City.Text,
+    //            PostalCode = tb_PostalCode.Text,
+    //        });
 
-            file.Save(JsonConvert.SerializeObject(contacts));
-            ClearForm();
-        }
+    //        file.Save(JsonConvert.SerializeObject(contacts));
+    //        ClearForm();
+    //    }
 
-        private void ClearForm()
-        {
-            tb_FirstName.Text = "";
-           tb_LastName.Text = "";
-            tb_Email.Text = "";
-            tb_Phone.Text = "";
-            tb_StreetName.Text = "";
-            tb_City.Text = "";
-            tb_PostalCode.Text = "";
-        }
-    }
+    //    private void ClearForm()
+    //    {
+    //        tb_FirstName.Text = "";
+    //       tb_LastName.Text = "";
+    //        tb_Email.Text = "";
+    //        tb_Phone.Text = "";
+    //        tb_StreetName.Text = "";
+    //        tb_City.Text = "";
+    //        tb_PostalCode.Text = "";
+    //    }
+    //}
 }

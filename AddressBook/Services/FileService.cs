@@ -1,6 +1,6 @@
 ﻿namespace AddressBook.Services;
 
-internal class FileService
+public class FileService
 {
     public string FilePath { get; set; } = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}.\content.json";
 
