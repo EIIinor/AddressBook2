@@ -3,12 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:WPF_AddressBook2.MVVM.Views"
+             xmlns:views="clr-namespace:WPF_AddressBook2.MVVM.Views"
              mc:Ignorable="d"
              xmlns:models="clr-namespace:WPF_AddressBook2.MVVM.Models"
              xmlns:viewmodels="clr-namespace:WPF_AddressBook2.MVVM.ViewModels"
              d:DataContext="{d:DesignInstance Type=viewmodels:ContactsViewModel}"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="700" d:DesignWidth="1000">
+    
     <Grid Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -46,10 +47,11 @@
             </ListView>
 
             <StackPanel Grid.Column="1">
-                <TextBlock Text="{Binding SelectedContact.Email}" />
+                <TextBlock Text="{Binding SelectedContact.DisplayName}" />
             </StackPanel>
             
         </Grid>
-        
+
+
     </Grid>
 </UserControl>
