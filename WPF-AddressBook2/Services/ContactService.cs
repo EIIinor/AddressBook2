@@ -33,6 +33,8 @@ namespace WPF_AddressBook2.Services
         }
 
 
+
+
         public static void RemoveFromList(ContactModel model)
         {
             Contacts.Remove(model);

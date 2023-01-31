@@ -17,9 +17,8 @@ namespace WPF_AddressBook2.MVVM.ViewModels
         }
 
 
-
         [ObservableProperty]
-        private string pageTitle = "Contacts";
+        private string pageTitle = "List Of Contacts";
 
 
         [ObservableProperty]

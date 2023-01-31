@@ -6,44 +6,49 @@
              xmlns:viewmodels="clr-namespace:WPF_AddressBook2.MVVM.ViewModels"
              d:DataContext="{d:DesignInstance Type=viewmodels:EditContactViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="700" d:DesignWidth="1000">
-    
-    <Grid Margin="40">
+             d:DesignHeight="600" d:DesignWidth="700">
+
+    <Grid Margin="20 5 20 0">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="{Binding PageTitle}" Margin="0 0 0 20" FontSize="20" FontWeight="medium" />
+        <TextBlock Grid.Row="0" Text="{Binding PageTitle}"  FontSize="20" FontWeight="medium" Foreground="LightGray" />
 
         <StackPanel Grid.Row="1" Margin="0 0 0 0" >
 
-            <Label Content="Firstname" Margin="0 10 0 0" />
-            <TextBox Text="{Binding SelectedContact.FirstName}" Padding="5" />
+            <Label Content="Firstname" Margin="0 5 0 0" />
+            <TextBox Text="{Binding SelectedContact.FirstName}" Padding="3" />
 
-            <Label Content="Lastname" Margin="0 10 0 0" />
-            <TextBox Text="{Binding SelectedContact.LastName}" Padding="5" />
+            <Label Content="Lastname" Margin="0 5 0 0" />
+            <TextBox Text="{Binding SelectedContact.LastName}" Padding="3" />
 
-            <Label Content="Email" Margin="0 10 0 0" />
-            <TextBox Text="{Binding SelectedContact.Email}" Padding="5" />
+            <Label Content="Email" Margin="0 5 0 0" />
+            <TextBox Text="{Binding SelectedContact.Email}" Padding="3" />
 
-            <Label Content="Phone" Margin="0 10 0 0" />
-            <TextBox Text="{Binding SelectedContact.Phone}" Padding="5" />
+            <Label Content="Phone" Margin="0 5 0 0" />
+            <TextBox Text="{Binding SelectedContact.Phone}" Padding="3" />
 
-            <Label Content="Streetname" Margin="0 10 0 0" />
-            <TextBox Text="{Binding SelectedContact.StreetName}" Padding="5" />
+            <Label Content="Streetname" Margin="0 5 0 0" />
+            <TextBox Text="{Binding SelectedContact.StreetName}" Padding="3" />
 
-            <Label Content="Postalcode" Margin="0 10 0 0" />
-            <TextBox Text="{Binding SelectedContact.PostalCode}" Padding="5" />
+            <Label Content="Postalcode" Margin="0 5 0 0" />
+            <TextBox Text="{Binding SelectedContact.PostalCode}" Padding="3" />
 
-            <Label Content="City" Margin="0 10 0 0" />
-            <TextBox Text="{Binding SelectedContact.City}" Padding="5" />
+            <Label Content="City" Margin="0 5 0 0" />
+            <TextBox Text="{Binding SelectedContact.City}" Padding="3" />
 
-            <Button Content="Update Contact" Margin="0 20 0 0" Padding="10" Command="{Binding UpdateContactCommand}" />
-            <Button Content="Cancel" Margin="0 20 0 0" Padding="10" Command="{Binding CancelCommand}" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btn_Update" Click="btn_Update_Click" Content="Update Contact"  Margin="0 20 20 0" />
+                <Button x:Name="btn_Cancel" Click="btn_Cancel_Click" Content="Cancel"  Margin="0 20 20 0" />
+            </StackPanel>
 
         </StackPanel>
 
     </Grid>
 </UserControl>
+
+
+<!--<Button Content="Update Contact" Margin="0 20 20 0" Padding="10" Command="{Binding UpdateContactCommand}"-->

@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using AddressBook.Models;
+using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 using WPF_AddressBook2.MVVM.Models;
 using WPF_AddressBook2.MVVM.ViewModels;
 using WPF_AddressBook2.Services;
@@ -8,15 +11,18 @@ namespace WPF_AddressBook2.MVVM.Views
 {
     public partial class ContactsView : UserControl
     {
+   
         public ContactsView()
         {
             InitializeComponent();
+      
         }
 
         private void btn_Edit_Click(object sender, RoutedEventArgs e)
         {
-            var button = (Button)sender;
-            var contact = (ContactModel)button.DataContext;
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainViewModel mainViewModel = (MainViewModel)mainWindow.DataContext;
+            mainViewModel.CurrentViewModel = new EditContactViewModel();
         }
 
 

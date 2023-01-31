@@ -1,9 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using WPF_AddressBook2.Services;
 using WPF_AddressBook2.MVVM.Models;
-using System.Linq;
-using Newtonsoft.Json;
+
+using System.Windows.Input;
 
 namespace WPF_AddressBook2.MVVM.ViewModels
 {
@@ -18,11 +17,10 @@ namespace WPF_AddressBook2.MVVM.ViewModels
         private string contact = string.Empty;
 
 
-        [RelayCommand]
-        private void Cancel()
-        {
+        [ObservableProperty]
+        private ContactModel selectedContact = null!;
 
-        }
+
 
         [RelayCommand]
         private void UpdateContact()

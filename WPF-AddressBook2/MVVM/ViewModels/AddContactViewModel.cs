@@ -14,25 +14,15 @@ namespace WPF_AddressBook2.MVVM.ViewModels
         [ObservableProperty]
         private ContactModel contact = new ContactModel();
 
-        //[ObservableProperty]
-        //private string contact = string.Empty;
 
         [RelayCommand]
-        private void Add(ContactModel contact)
+        private void Add()
         {
-            ContactService.AddToList(contact);
-            //ClearForm(contact);
+            ContactService.AddToList(Contact);
+
+            Contact = new ContactModel();
         }
 
-        //private void ClearForm(ContactModel contact)
-        //{
-        //    Contact.FirstName = string.Empty;
-        //    contact.LastName = string.Empty;
-        //    contact.Phone = string.Empty;
-        //    contact.Email = string.Empty;
-        //    contact.StreetName = string.Empty
-        //    contact.City = string.Empty;
-        //    contact.PostalCode = "";
-        //}
+
     }
 }

@@ -11,21 +11,20 @@
         xmlns:customControls="clr-namespace:WPF_AddressBook2.CustomControls"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="MainWindow" Height="700" Width="1000">
+        Title="MainWindow" Height="600" Width="700" Background="LightSlateGray">
 
-    <Grid Margin="20">
+    <Grid Margin="30">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
 
-        <StackPanel Grid.Column="0">
-            <Button Command="{Binding GoToContactsCommand}" Content="&#xf2b9;" Style="{StaticResource navButton}" />
-            <Button Command="{Binding GoToAddContactCommand}" Content="&#xf234;" Style="{StaticResource navButton}" />
-            
-        </StackPanel>
-        
+        <Border CornerRadius="20" Grid.Column="0" Background="LightGray">
+            <StackPanel>
+                <Button Command="{Binding GoToContactsCommand}" Content="&#xf2b9;" Style="{StaticResource navButton}" />
+                <Button Command="{Binding GoToAddContactCommand}" Content="&#xf234;" Style="{StaticResource navButton}" />
+            </StackPanel>
+        </Border>
 
         <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}">
             <ContentControl.Resources>
@@ -34,6 +33,9 @@
                 </DataTemplate>
                 <DataTemplate DataType="{x:Type viewmodels:AddContactViewModel}">
                     <views:AddContactView />
+                </DataTemplate>
+                <DataTemplate DataType="{x:Type viewmodels:EditContactViewModel}">
+                    <views:EditContactView />
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
