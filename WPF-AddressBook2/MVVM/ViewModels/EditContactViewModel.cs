@@ -1,8 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using WPF_AddressBook2.MVVM.Models;
+using System.Windows;
 
-using System.Windows.Input;
 
 namespace WPF_AddressBook2.MVVM.ViewModels
 {
@@ -20,24 +19,36 @@ namespace WPF_AddressBook2.MVVM.ViewModels
         [ObservableProperty]
         private ContactModel selectedContact = null!;
 
+        public EditContactViewModel()
+        {   
 
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainViewModel mainViewModel = (MainViewModel)mainWindow.DataContext;
+            SelectedContact = mainViewModel.SelectedContact ?? new ContactModel();
 
-        [RelayCommand]
-        private void UpdateContact()
-        {
-            //var selectedContact = ContactService.Contacts.FirstOrDefault(c => c.Id == this.SelectedContact.Id);
-
-            //if (selectedContact == null) return;
-
-            //selectedContact.FirstName = this.FirstName;
-            //selectedContact.LastName = this.LastName;
-            //selectedContact.Email = this.Email;
-            //selectedContact.Phone = this.Phone;
-            //selectedContact.StreetName = this.StreetName;
-            //selectedContact.PostalCode = this.PostalCode;
-            //selectedContact.City = this.City;
-
-            //ContactService.fileService.Save(JsonConvert.SerializeObject(ContactService.Contacts));
         }
+
+
+        //[RelayCommand]
+        //private void UpdateContact()
+        //{
+        //    ContactService.UpdateContact(SelectedContact);
+
+        //    //if (SelectedContact != null)
+        //    //{
+        //    //    SelectedContact.FirstName = model.FirstName;
+        //    //    SelectedContact.LastName = model.LastName;
+        //    //    SelectedContact.Phone = model.Phone;
+        //    //    SelectedContact.Email = model.Email;
+        //    //    SelectedContact.StreetName = model.StreetName;
+        //    //    SelectedContact.City = model.City;
+        //    //    SelectedContact.PostalCode = model.PostalCode;
+        //    //    ContactService.UpdateContact(SelectedContact);
+        //    //}
+
+        //    //MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+        //    //MainViewModel mainViewModel = (MainViewModel)mainWindow.DataContext;
+        //    //mainViewModel.CurrentViewModel = new ContactsViewModel();
+        //}
     }
 }

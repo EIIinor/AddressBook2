@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using AddressBook.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows;
 using WPF_AddressBook2.MVVM.Models;
-using WPF_AddressBook2.MVVM.ViewModels;
+
 
 namespace WPF_AddressBook2.Services
 {
@@ -54,30 +54,10 @@ namespace WPF_AddressBook2.Services
                 contact.StreetName = model.StreetName;
                 contact.City = model.City;
                 contact.PostalCode = model.PostalCode;
+
             }
             fileService.Save(JsonConvert.SerializeObject(Contacts));
         }
 
     }
 }
-
-//Contacts = new ObservableCollection<ContactModel>();
-//FileService.FilePath = $@"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}\WPF.contacts.json";
-
-//   ReadFromFile();
-//}
-
-
-
-//public void AddToList(Contact contact)
-//{
-//    contacts.Add(contact);
-//    SaveToFile();
-//}
-
-
-//public void RemoveFromList(Contact contact)
-//{
-//    contacts.Remove(contact);
-//    SaveToFile();
-//}

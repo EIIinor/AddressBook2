@@ -23,6 +23,5 @@ namespace WPF_AddressBook2.MVVM.ViewModels
             Contact = new ContactModel();
         }
 
-
     }
 }

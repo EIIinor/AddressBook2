@@ -1,8 +1,5 @@
-﻿using AddressBook.Models;
-using System.Linq;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
 using WPF_AddressBook2.MVVM.Models;
 using WPF_AddressBook2.MVVM.ViewModels;
 using WPF_AddressBook2.Services;
@@ -22,7 +19,13 @@ namespace WPF_AddressBook2.MVVM.Views
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
             MainViewModel mainViewModel = (MainViewModel)mainWindow.DataContext;
-            mainViewModel.CurrentViewModel = new EditContactViewModel();
+
+            ContactModel selectedContact = (sender as Button).DataContext as ContactModel;
+
+            EditContactViewModel editContactViewModel = new EditContactViewModel();
+            editContactViewModel.SelectedContact = selectedContact;
+
+            mainViewModel.CurrentViewModel = editContactViewModel;
         }
 
 
@@ -41,6 +44,16 @@ namespace WPF_AddressBook2.MVVM.Views
         {
             var listViewItem = (ListViewItem)sender;
             var contact = (ContactModel)listViewItem.DataContext;
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            ContactsViewModel contactsViewModel = (ContactsViewModel)mainWindow.DataContext;
+            contactsViewModel.SelectedContact = contact;
         }
+
+
+        //private void ListView_Selected(object sender, RoutedEventArgs e)
+        //{
+        //    var listViewItem = (ListViewItem)sender;
+        //    var contact = (ContactModel)listViewItem.DataContext;
+        //}
     }
 }
