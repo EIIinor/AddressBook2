@@ -1,5 +1,4 @@
-﻿using AddressBook.Models;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using WPF_AddressBook2.MVVM.Models;
 using WPF_AddressBook2.MVVM.ViewModels;

@@ -54,7 +54,6 @@ namespace WPF_AddressBook2.Services
                 contact.StreetName = model.StreetName;
                 contact.City = model.City;
                 contact.PostalCode = model.PostalCode;
-
             }
             fileService.Save(JsonConvert.SerializeObject(Contacts));
         }
