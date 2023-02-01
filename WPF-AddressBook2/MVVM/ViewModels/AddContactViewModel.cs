@@ -11,6 +11,7 @@ namespace WPF_AddressBook2.MVVM.ViewModels
         [ObservableProperty]
         private string pageTitle = "Add Contact";
 
+
         [ObservableProperty]
         private ContactModel contact = new ContactModel();
 

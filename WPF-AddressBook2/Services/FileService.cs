@@ -25,7 +25,7 @@ namespace WPF_AddressBook2.Services
         public void Save(string content)
         {
             using var sw = new StreamWriter(_filePath);
-            sw.WriteLine(content);
+            sw.Write(content);
         }
 
     }

@@ -13,7 +13,6 @@ namespace WPF_AddressBook2.MVVM.ViewModels
         public ContactsViewModel()
         {
             contacts = ContactService.Contacts;
-
         }
 
 

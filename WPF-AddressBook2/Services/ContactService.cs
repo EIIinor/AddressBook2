@@ -1,5 +1,4 @@
-﻿using AddressBook.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -44,7 +43,10 @@ namespace WPF_AddressBook2.Services
 
         public static void UpdateContact(ContactModel model)
         {
-            var contact = Contacts.FirstOrDefault(x => x.Id == model.Id);
+            Contacts = JsonConvert.DeserializeObject<ObservableCollection<ContactModel>>(fileService.Read())!;
+            Contacts = new ObservableCollection<ContactModel>();
+
+                var contact = Contacts.FirstOrDefault(x => x.Id == model.Id);
             if (contact != null)
             {
                 contact.FirstName = model.FirstName;
