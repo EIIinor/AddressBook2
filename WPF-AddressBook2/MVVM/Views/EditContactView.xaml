@@ -41,7 +41,7 @@
             <TextBox Text="{Binding SelectedContact.City}" Padding="3" />
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btn_Update" Click="btn_Update_Click" Content="Update Contact"  Margin="0 20 20 0" />
+                <Button Command="{Binding UpdateCommand}" Content="Update Contact"  Margin="0 20 20 0" />
                 <Button x:Name="btn_Cancel" Click="btn_Cancel_Click" Content="Go Back"  Margin="0 20 20 0"  />
             </StackPanel>
 

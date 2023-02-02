@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 
 namespace WPF_AddressBook2.Services
@@ -25,7 +26,7 @@ namespace WPF_AddressBook2.Services
         public void Save(string content)
         {
             using var sw = new StreamWriter(_filePath);
-            sw.Write(content);
+            sw.WriteLine(content);
         }
 
     }

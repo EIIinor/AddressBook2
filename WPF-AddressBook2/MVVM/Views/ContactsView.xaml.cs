@@ -49,11 +49,5 @@ namespace WPF_AddressBook2.MVVM.Views
             contactsViewModel.SelectedContact = contact;
         }
 
-
-        //private void ListView_Selected(object sender, RoutedEventArgs e)
-        //{
-        //    var listViewItem = (ListViewItem)sender;
-        //    var contact = (ContactModel)listViewItem.DataContext;
-        //}
     }
 }

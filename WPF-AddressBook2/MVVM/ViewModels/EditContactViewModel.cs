@@ -1,7 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using WPF_AddressBook2.MVVM.Models;
 using System.Windows;
-
+using CommunityToolkit.Mvvm.Input;
+using WPF_AddressBook2.Services;
 
 namespace WPF_AddressBook2.MVVM.ViewModels
 {
@@ -28,27 +29,15 @@ namespace WPF_AddressBook2.MVVM.ViewModels
 
         }
 
-
-        //[RelayCommand]
-        //private void UpdateContact()
-        //{
-        //    ContactService.UpdateContact(SelectedContact);
-
-        //    //if (SelectedContact != null)
-        //    //{
-        //    //    SelectedContact.FirstName = model.FirstName;
-        //    //    SelectedContact.LastName = model.LastName;
-        //    //    SelectedContact.Phone = model.Phone;
-        //    //    SelectedContact.Email = model.Email;
-        //    //    SelectedContact.StreetName = model.StreetName;
-        //    //    SelectedContact.City = model.City;
-        //    //    SelectedContact.PostalCode = model.PostalCode;
-        //    //    ContactService.UpdateContact(SelectedContact);
-        //    //}
+        [RelayCommand]
+        private void Update()
+        {
+            ContactService.UpdateContact();
+            MessageBox.Show("Your contact has been updated.");
+        }
 
         //    //MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
         //    //MainViewModel mainViewModel = (MainViewModel)mainWindow.DataContext;
         //    //mainViewModel.CurrentViewModel = new ContactsViewModel();
-        //}
     }
 }
